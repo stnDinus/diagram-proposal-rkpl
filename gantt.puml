@@ -1,0 +1,28 @@
+@startgantt
+printscale weekly
+hide resources footbox
+
+Title Rincian waktu (mingguan)
+Label on last column
+
+-- Rekayasa Kebutuhan --
+[Analisis Kebutuhan] as [analisa] on {Requirement Engineer} requires 2 weeks
+then [Perancangan Sistem] as [desain] on {UI/UX Designer} {Requirement Engineer} requires 2 weeks
+
+-- Implementasi --
+then [Pengembangan Backend dan API] as [backend] on {Backend Developer} requires 3 week
+then [Pengembangan Frontend] as [frontend] on {Frontend Developer} requires 3 week
+
+-- Pengujian --
+then [Desain Pengujian] as [desain-testing] on {QA Tester} requires 2 week
+then [Eksekusi Pengujian] as [testing] on {QA Tester} requires 2 week
+
+-- Deployment --
+then [Implementasi dan Deployment] as [deploy] on {Devops Engineer} requires 1 week
+then [Pemeliharaan Awal] as [pemeliharaan] on {Devops Engineer} requires 2 week
+
+[Dokumentasi dan Training] as [dokumentasi] on {Semua Anggota Tim} starts at [analisa]'s start and ends at [deploy]'s end
+
+footer Total 16 minggu (~4 bulan / 112 hari) dengan pertimbangan libur sabtu dan minggu
+
+@endgantt
