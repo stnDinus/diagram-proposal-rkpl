@@ -1,0 +1,17 @@
+@startuml
+actor "Pembeli" as client
+participant "Aplikasi" as app
+participant "Printer 3D" as printer
+actor "Penjual" as seller
+
+client -> app: buat akun
+loop hingga file desain diterima
+  client -> app: mengirimkan/merevisi file desain 3D dan peneyetelan pencetakan (bahan filamen, warna, dll)
+  app -> client: memberikan estimasi harga berdasarkan estimasi berat hasil cetak, peneyetelan pencetakan, dll
+  app <- seller: terima atau tolak file desain yang telah dikirim, tuliskan catatan revisi jika perlu
+end
+client -> app: melakukan pembayaran berdasarkan estimasi harga
+app -> printer: memulai pencetakan berdasarkan file desain
+printer <- seller: melakukan inspeksi hasil pencetakan
+seller -> client: mengirimkan hasil pencetakan
+@enduml
