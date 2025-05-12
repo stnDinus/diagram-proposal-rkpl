@@ -21,7 +21,7 @@ then [Eksekusi Pengujian] as [testing] on {QA Tester} requires 2 week
 then [Implementasi dan Deployment] as [deploy] on {Devops Engineer} requires 1 week
 then [Pemeliharaan Awal] as [pemeliharaan] on {Devops Engineer} requires 2 week
 
-[Dokumentasi dan Training] as [dokumentasi] on {Semua Anggota Tim} starts at [analisa]'s start and ends at [deploy]'s end
+[Dokumentasi] as [dokumentasi] on {Semua Anggota Tim} starts at [analisa]'s start and ends at [deploy]'s end
 
 footer Total 16 minggu (~4 bulan / 112 hari) dengan pertimbangan libur sabtu dan minggu
 
